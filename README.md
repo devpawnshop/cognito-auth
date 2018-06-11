@@ -3,7 +3,7 @@ cognito-auth
 
 This project outlines the authentication, registration and authorization of an AWS Cognito user pool using simple bootstrap forms and the AWS Cognito SDKs. 
 
-**HTML**
+## HTML
 ###### The folowing \*.html files are included as examples
 ###### `login.html`
 ###### `register.html`
