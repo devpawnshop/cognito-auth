@@ -1,7 +1,7 @@
 cognito-auth
 ============
 
-This project outlines the authentication, registration and authorization of an AWS Cognito user pool using simple bootstrap forms and the AWS cognito SDKs. 
+This project outlines the authentication, registration and authorization of an AWS Cognito user pool using simple bootstrap forms and the AWS Cognito SDKs. 
 
 **HTML**
 
@@ -11,7 +11,7 @@ This project outlines the authentication, registration and authorization of an A
 
 
 **HTML**
-```
+```html
     <form class="form-horizontal readOnly">
         <div class="control-group">
             <label class="control-label" for="inputName">
