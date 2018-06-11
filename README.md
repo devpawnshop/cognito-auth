@@ -4,7 +4,9 @@ cognito-auth
 This project outlines the authentication, registration and authorization of an AWS Cognito user pool using simple bootstrap forms and the AWS Cognito SDKs. 
 
 **HTML**
-###### The \*.html files included are a login page `login.html`, a registration page `register.html`, and an index page `index.html`. `login.html` and `registration.html` use standard form elements.  The responding jQuery functions handle events by an element's id `#elementid`.  `index.html` is an example of protecting your app by requiring the token provided by Cognito upon successful login.  The token is stored in the browser's local storage.
+###### The \*.html files included are a login page `login.html`, a registration page `register.html`, and an index page `index.html`. `login.html` and `registration.html` use standard form elements.  
+###### The responding jQuery functions handle events by an element's id `#elementid`.  
+###### `index.html` is an example of protecting your app by requiring the token provided by Cognito upon successful login.  The token is stored in the browser's local storage.
 
 **JS**
 
