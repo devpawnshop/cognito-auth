@@ -14,9 +14,9 @@ This project outlines the authentication, registration and authorization of an A
 ###### The responding jQuery functions handle events by an element's id; `$(#elementid)`
   
 
-**JS**
+## JS
 
-**CSS**
+## CSS
 
 
 **HTML**
