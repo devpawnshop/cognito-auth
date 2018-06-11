@@ -11,7 +11,7 @@ This project outlines the authentication, registration and authorization of an A
 ###### `login.html` and `registration.html` use standard form elements.  
 ###### `index.html` is an example of protecting your app by requiring the token provided by Cognito upon successful login.  The token is stored in the browser's local storage.
 >Local Storage items persist between tabs and do not expire.  The token issued by cognito should expire 1 hour from the time it is issued.
-###### The responding jQuery functions handle events by an element's id `#elementid`.  
+###### The responding jQuery functions handle events by an element's id; `#elementid`.  
 
 **JS**
 
