@@ -28,9 +28,24 @@ The User Pool ID can be found from the AWS console for Cognito in the General Se
 Likewise, the Pool Client ID can be found by selecting App Clients from the left menu.
 
 ##### - `js/cognito-auth.js`
-This file is laid out in three different sections.
+This file is laid out in three different sections and flows in this order.
 1. `/**** POOL CONFIG ****/` 
    - This section establishes a connection to the cognito user pool with the data in the config file. 
+2. `/**** EVENT HANDLERS ****/`
+   - This section uses jQuery to handle events triggered when the submit button is clicked on a form.
+     - The functions called for each of these events are part of the EVENT HANDLERS section. Each function gathers additional data established from either an input box or `<div>` value before calling a Pool function.
+  
+  ```javascript
+   $(function onDocReady() {
+        $('#login-form').submit(handleSignin);
+        $('#signupform').submit(handleRegister);
+        $('#verifyForm').submit(handleVerify);
+	});
+```
+3. `/**** POOL FUNCTIONS ****/`
+   - These functions perform the necessary task against the Cognito user pool.
+     - Necessary data is provided by the EVENT HANDLER function and the POOL CONFIG data.
+
 ##### - `index.html`
 
 
