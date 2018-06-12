@@ -12,7 +12,35 @@ The `login.html` and `registration.html` files use simple bootstrap form element
 `index.html` is an example of protecting your app by requiring the token provided by Cognito upon successful login.  The token is stored in the browser's local storage.
 >Local Storage items persist between tabs and do not expire.  The token issued by cognito should expire 1 hour from the time it is issued.
 The responding jQuery functions handle events by an element's id; `$(#elementid)`
-  
+
+Define client-side scripts below all other js scripts. Order matters!!
+`login.html` and `registration.html`:
+
+```javascript
+<!-- COGNITO SDK -->
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.250.1.min.js"></script>
+<script src="js/aws-cognito-sdk.min.js"></script>
+<script src="js/amazon-cognito-identity.min.js"></script>
+        
+<!-- COGNITO APP POOL CONFIG -->
+<script src="js/config.js"></script>
+<script src="js/cognito-auth.js"></script>
+```
+The app pages, `index.html`, in this example get the same files with one an additional js file.
+
+```javascript
+<!-- COGNITO SDK -->
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.250.1.min.js"></script>
+<script src="js/aws-cognito-sdk.min.js"></script>
+<script src="js/amazon-cognito-identity.min.js"></script>
+        
+<!-- COGNITO APP POOL CONFIG -->
+<script src="js/config.js"></script>
+<script src="js/cognito-auth.js"></script>
+
+<!-- COGNITO APP SESSION CONFIG -->
+<script src="js/index.js"></script>
+```
 
 ## JS
 The javascript files used to support the Cognito functionality are as follow:
@@ -46,36 +74,14 @@ This file is laid out in three different sections and flows in this order.
    - These functions perform the necessary task against the Cognito user pool.
      - Necessary data is provided by the EVENT HANDLER function and the POOL CONFIG data.
 
-##### - `index.html`
+##### - `js/index.js`
+As mentioned earlier, a successful login creates a token that is stored in Local Storage.  You can verify this token by looking in the Local Storage section of your browser's developer's tools.  
+
+This file is laid out in two sections and flows in this order.
+1. `/**** Check Session in Local Storage ****/` 
+   - This section verifies the existence of a valid token protecting the page.  If a valid token is not present, the browser will be directed to the login page. 
+2. `/**** EVENT HANDLERS ****/`
+   - A signOut funtion is established.
+   - As an example, a few attributes are inserted to a `<dom>`.
 
 
-
-```javascript
-   $(function onDocReady() {
-        $('#login-form').submit(handleSignin);
-        $('#signupform').submit(handleRegister);
-        $('#verifyForm').submit(handleVerify);
-	});
-```
-
-
-## CSS
-
-
-**HTML**
-```html
-    <form class="form-horizontal readOnly">
-        <div class="control-group">
-            <label class="control-label" for="inputName">
-                Name
-            </label>
-            <div class="controls">
-                <input type="text" id="inputName" placeholder="Name" value="Marty Mcfly">
-            </div>
-        </div>
-        <div class="control-group">
-            ...
-        </div>
-        ...
-    </form>
-```
