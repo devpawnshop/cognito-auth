@@ -5,9 +5,9 @@ This project outlines the authentication, registration and authorization of an A
 
 ## HTML
 ###### The folowing \*.html files are included as examples
-###### `login.html`
-###### `register.html`
-###### `index.html` 
+###### - `login.html`
+###### - `register.html`
+###### - `index.html` 
 ###### `login.html` and `registration.html` use simple bootstrap form elements.  
 ###### `index.html` is an example of protecting your app by requiring the token provided by Cognito upon successful login.  The token is stored in the browser's local storage.
 >Local Storage items persist between tabs and do not expire.  The token issued by cognito should expire 1 hour from the time it is issued.
